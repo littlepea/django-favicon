@@ -20,7 +20,7 @@ Add "favicon" to your INSTALLED_APPS in settings.py::
 Add favicon URL patterns to urls.py::
 
       urlpatterns = patterns('',
-          url(r'^admin/', include(admin.site.urls)),
+          ...
           url(r'^', include('favicon.urls')),
       )
 
@@ -47,4 +47,6 @@ or::
 Credits
 ------------------------------------
 
-* Developed and maintained under supervision of [Evgeny Demchenko](https://github.com/littlepea)
+* Developed and maintained under supervision of `Evgeny Demchenko`_
+
+.. _Evgeny Demchenko: https://github.com/littlepea
