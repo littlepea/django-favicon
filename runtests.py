@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import os
 
 from django.conf import settings
 
@@ -17,6 +18,11 @@ if not settings.configured:
         ),
         SITE_ID=1,
         SECRET_KEY='this-is-just-for-tests-so-not-that-secret',
+        STATIC_URL='/static/',
+        STATICFILES_FINDERS = (
+            'django.contrib.staticfiles.finders.FileSystemFinder',
+            'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        ),
     )
 
 
