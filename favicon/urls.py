@@ -3,5 +3,5 @@ from django.views.generic import TemplateView, RedirectView
 import conf
 
 urlpatterns = patterns('',
-    url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': conf.FAVICON_PATH}, name='favicon'),
+    url(r'^favicon\.ico$', RedirectView.as_view(url=conf.FAVICON_PATH}), name='favicon'),
 )
