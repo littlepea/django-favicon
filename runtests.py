@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 import sys
-import os
 
 from django.conf import settings
-
 
 if not settings.configured:
     settings.configure(
@@ -19,12 +17,11 @@ if not settings.configured:
         SITE_ID=1,
         SECRET_KEY='this-is-just-for-tests-so-not-that-secret',
         STATIC_URL='/static/',
-        STATICFILES_FINDERS = (
+        STATICFILES_FINDERS=(
             'django.contrib.staticfiles.finders.FileSystemFinder',
             'django.contrib.staticfiles.finders.AppDirectoriesFinder',
         ),
     )
-
 
 from django.test.utils import get_runner
 
@@ -38,4 +35,3 @@ def runtests():
 
 if __name__ == '__main__':
     runtests()
-
