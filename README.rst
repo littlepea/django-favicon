@@ -19,9 +19,12 @@ Add "favicon" to your INSTALLED_APPS in settings.py::
 
 Add favicon URL patterns to urls.py::
 
+      # from django.conf.urls import url, include
+      from django.urls import path, include
       urlpatterns = patterns('',
           ...
-          url(r'^', include('favicon.urls')),
+          # url(r'^', include('favicon.urls')),
+          path ('', include('favicon.urls'))
       )
 
 Usage
