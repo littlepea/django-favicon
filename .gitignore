@@ -9,5 +9,5 @@
 .tox
 *.egg-info/*
 docs/_build/*
-dist/*
+dist/
 .idea/*
