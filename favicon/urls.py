@@ -5,4 +5,4 @@ except ImportError:
 from django.views.generic import TemplateView, RedirectView
 from . import conf
 
-urlpatterns = [url(r"^favicon\.ico$", RedirectView.as_view(url=conf.FAVICON_PATH, permanent=True), name="favicon")]
+urlpatterns = [url(r'^favicon\.ico$', RedirectView.as_view(url=conf.FAVICON_PATH, permanent=True), name='favicon')]
