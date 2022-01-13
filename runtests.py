@@ -1,7 +1,11 @@
 #!/usr/bin/env python
+import os
 import sys
+import django
 
 from django.conf import settings
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 if not settings.configured:
     settings.configure(
@@ -17,12 +21,13 @@ if not settings.configured:
         SITE_ID=1,
         SECRET_KEY='this-is-just-for-tests-so-not-that-secret',
         STATIC_URL='/static/',
-        STATICFILES_FINDERS=(
-            'django.contrib.staticfiles.finders.FileSystemFinder',
-            'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        STATIC_ROOT=os.path.join(BASE_DIR, "static"),
+        STATICFILES_DIRS=(
+            os.path.join(BASE_DIR, "favicon", "static")
         ),
     )
 
+django.setup()
 from django.test.utils import get_runner
 
 

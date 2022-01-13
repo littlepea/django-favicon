@@ -11,3 +11,5 @@
 docs/_build/*
 dist/*
 .idea/*
+env
+
